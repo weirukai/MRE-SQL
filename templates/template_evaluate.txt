@@ -1,0 +1,38 @@
+** Instructions: **
+Given the following question, database schema, candidate SQL query responses, and a unit test, assess whether each of the SQL responses passes the provided unit test.
+
+- Before finalizing your evaluation, provide reasoning explaining how each response aligns with the unit test criteria.
+- At the end of your evaluation, please provide a list of judgments for each candidate response within <answer> and </answer> tags. Each entry must clearly indicate which response it refers to, and you must use either '[Passed]' or '[Failed]' as the verdict format.
+- Each verdict should be on a new line and correspond to the candidate response in the same order as they are provided, and note that all candidate response should be evaluated by the unit test.
+
+- Your MUST output in the following format:
+
+(Your step by step reasoning here...)
+<answer>
+Candidate Response #1: [Passed]
+Candidate Response #2: [Failed]
+....
+</answer>
+
+
+- Here is the question, database schema, candidate responses, and the unit test to evaluate the SQL responses:
+** Database Schema: **
+{DATABASE_SCHEMA}
+
+** Question: **
+Question: {QUESTION} (Hint: {HINT})
+
+** Candidate SQL Queries: **
+{CANDIDATE_RESPONSES}
+
+** Unit Test: **
+{UNIT_TEST}
+
+** Output Format: **
+
+( Your step by step reasoning here... )
+<answer>
+Candidate Response #1: [Passed]
+Candidate Response #2: [Failed]
+...
+</answer>

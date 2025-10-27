@@ -1,0 +1,45 @@
+**Instruction**:
+
+Given a database schema with specific table structures, relationships, and example data, along with a natural language query question, you are provided with a list of candidate SQL queries. Among these candidates, some accurately answer the question based on the database's logical constraints and expected result set, while others contain structural or logical errors (e.g., incorrect joins, filters, aggregations, or column selections). Your task is to:
+
+1. Compare all candidate SQL queries to identify differences in:
+- Query structure (e.g., JOIN types, subquery usage, GROUP BY/ORDER BY clauses).
+- Semantic logic (e.g., WHERE clause conditions, table aliases, column references).
+- Result consistency (e.g., whether they return the intended rows/columns based on the question).
+2. Validate correctness by:
+- Mapping each query to the original question's requirements.
+- Checking alignment with the database schema (e.g., foreign key relationships, data types).
+- Simulating execution against sample data (if provided) or logical deduction.
+3. Select the correct SQL query that:
+- Fully satisfies the question's intent.
+- Avoids unintended side effects (e.g., duplicates, missing rows, incorrect aggregations).
+- Explain why other candidates fail , highlighting specific flaws in their logic or structure.
+(If all are correct, one is chosen at random)
+
+** Output Format: **
+You MUST respond only with standard JSON format as follows:
+{{
+
+"Reasoning": "(All your step by step reasoning content should enclosed here....)",
+
+"SQL":"(At the end of the analysis, you must output only the most correct SQL here...)"
+}}
+
+
+###############Here are some example questions and their gold SQLs:##########
+{Examples}
+###################Example Over################
+
+***********Your Task:***************
+**Database Schema:**
+{DATABASE_SCHEMA}
+**************************
+**Question:**
+{QUESTION}
+**Evidence:**
+{HINT}
+**************************
+**Candidate SQLs and Execution Results (First 10 rows!):**
+{Candidates}
+
+Let's think step by step to select the best candidate SQL!

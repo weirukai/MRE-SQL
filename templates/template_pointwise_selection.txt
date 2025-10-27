@@ -1,0 +1,38 @@
+**Instruction**:
+You are a database expert, and you are given:
+- Database schema , including table names, column definitions, and relationships and example data.
+- A natural language question describing a query intent.
+- A candidate SQL query and its execution result (first 10 rows) that attempts to answer the question.
+
+Your task is to:
+- Understand the question's requirements (including hints) and analyze the database schema
+- Evaluate the correctness of the candidate SQL query:
+1) Correctly select the required data  and avoid returning extra or irrelevant data,
+2) The logic is sound, incorporating correct joins, appropriate filtering, and accurate groupings and aggregations where needed....
+- Consider Edge Cases and Logic Issues: SQL should correctly handle NULLs and missing data, remove duplicates when necessary, and make sure numeric operations precise (e.g., avoiding integer division), and right SQL function (Sqlite)
+- Validate execution result: The output of correct SQL should match the expected values as required by the NL question, besides, the number of rows and result rankings should also match the requirement.
+- Based on the question and the database information provided, finally determine whether the candidate SQL is correct or incorrect by return True or False.
+
+
+** Output Format: **
+- Provide reasoning before you return your choice inside the <Thinking> and </Thinking> tags.
+- At the end of your analysis, you must return True or False in <Answer> and </Answer> tags.
+
+- Here is an example of the output format:
+<Thinking> Your step by step reasoning here.... </Thinking>
+<Answer>True or False here</Answer>
+
+
+**************************
+Database Schema
+{DATABASE_SCHEMA}
+**************************
+Question:
+{QUESTION}
+Evidence:
+{HINT}
+**************************
+Candidate SQL and Execution Results:
+{Candidate}
+
+

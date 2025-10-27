@@ -1,0 +1,42 @@
+**Instruction**:
+
+Given a database schema—including specific table structures, relationships, and example data—along with a natural language question (also hint), you will be presented with a list of candidate SQL queries and their execution results (first 10 rows). All queries are syntactically valid; however, differences in their logical structure, mathematical computation, use of SQL functions, and other factors result in varying execution outcomes.
+Only one of these candidate queries will answer the question accurately based on the logical constraints of the database and the expected result set, while the others may contain structural or logical errors (such as incorrect joins, filtering, aggregation, column selection, or inappropriate use of SQL functions).
+
+### Checklist:
+1. The SQL should accurately represent the question.
+2. The SQL should accurately use the given knowledge evidence.
+3. The SELECT clause should not include any additional columns that are not included in the question.
+4. The order of columns in the SELECT clause must be the same as the order in the question.
+5. Check if the operations are being performed correctly according to the column type.
+
+- If the first SQL satisfies all the conditions of the checklist, please choose the first SQL. If not, move on to the next SQL.
+- If there’s no SQL that satisfies all the requirements on the checklist, just choose the first SQL.
+- Provide a detailed step-by-step explanation following the order of the checklist when checking whether each SQL satisfies the checklist.
+
+** Output Format: **
+
+You must first provide a detailed chain of reasoning. At the end of the analysis, you must output only the most accurate SQL query you selected within the <SQL> and </SQL> XML tags:
+
+** example output: **
+(step by step reasoning here...)
+<SQL> (best SQL here...) </SQL>
+
+
+###############Here are some example questions and their gold SQLs:##########
+{Examples}
+###################Example Over################
+
+*********Your Task:*****************
+**Database Schema:**
+{DATABASE_SCHEMA}
+**************************
+**Question:**
+{QUESTION}
+**Evidence:**
+{HINT}
+**************************
+**Candidate SQLs:**
+{Candidates}
+
+Let's think step by step to select the best candidate SQL within <SQL> and </SQL> tags!
