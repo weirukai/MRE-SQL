@@ -33,7 +33,7 @@ if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
                   credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS))
 
 # EMBEDDING_FUNCTION = VertexAIEmbeddings(model_name="text-embedding-004")#OpenAIEmbeddings(model="text-embedding-3-large")
-EMBEDDING_FUNCTION = LocalEmbedding(model="/home/wrk/OpenSearch-SQL/bge-base")
+EMBEDDING_FUNCTION = LocalEmbedding(model="../bge-base")
 
 
 def make_db_context_vec_db(db_directory_path: str, **kwargs) -> None:
