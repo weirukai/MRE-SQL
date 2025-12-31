@@ -1,6 +1,5 @@
 setting_name: CHESS_IR_CG_UT
 
-# 定义 engine_name 的锚点
 default_engine: {{default_engine}}
 base_url: {{base_url}}
 
