@@ -1,6 +1,37 @@
-# Multi-Ranker Ensemble for Robust Candidate Selection in Text-to-SQL
+# 🎯 Multi-Ranker Ensemble for Robust Candidate Selection in Text-to-SQL
 
 This repository contains the code and data for the paper "Multi-Ranker Ensemble for Robust Candidate Selection in Text-to-SQL"
+
+> **(𝑖) We propose multiple LLM-based candidate ranking strategies to enable multi-path reasoning. It leverages complementary signals from all strategies to improve robustness and reduce over-reliance on any single method.
+> (𝑖𝑖) We design an uncertainty-aware aggregation mechanism that dynamically weights each ranker according to its confidence and consistency. It improves selection stability and reduces overconfidence in unreliable judgments.**
+
+## 📦 Project Structure Overview
+
+```
+Multi-Verifier-Ensemble/
+├── data/                     # 🗃️ Datasets & Preprocessed DBs
+│
+├── run/                      # ⚙️ Configuration & Execution Scripts
+│   ├── configs/              # YAML configs for temperatures...
+│   │   └── selector_config.yaml
+│
+├── src/                      # 🧠 Core Logic & Workflow
+│   ├── database_utils/       # Database connection & metadata extraction
+│   ├── llm/                  # LLM wrappers & inference utilities
+│   ├── runner/               # Main execution orchestrator of the generator to produce candidates
+│   ├── workflow/             # CHESS integration + ensemble builder
+│   ├── ensemble_builder.py    # Multi-verifier ensemble logic
+│   ├── selection_builder.py   # Candidate scoring & ranking
+│   ├── generation.py          # Query generation (CHESS integration)
+│   ├── preprocess.py          # Schema/value preprocessing
+│   ├── few_shot.py           # Prompt templates for few-shot learning
+│   ├── ......
+│
+├── templates/                # 📄 Prompt Engineering Hub
+├── README.md                 # 📘 This document
+└── ......
+```
+
 
 
 
